@@ -118,8 +118,13 @@ bool SystemBattery::StopListen() {
   if (!_notifier) {
     return false;
   }
+  bool success = UnregisterPowerSettingNotification(notifier) != 0;
+  if (!success) {
+    return false;
+  }
+
   HPOWERNOTIFY notifier = nullptr;
   std::swap(notifier, _notifier);
   _callback = nullptr;
-  return UnregisterPowerSettingNotification(notifier) != 0;
+  return true;
 }
