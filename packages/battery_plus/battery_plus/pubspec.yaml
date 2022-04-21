@@ -29,11 +29,7 @@ dependencies:
   battery_plus_linux: ^1.1.1
   battery_plus_macos: ^1.1.0
   battery_plus_web: ^1.1.0
-  battery_plus_windows:
-    git:
-      url: https://github.com/jdebou/plus_plugins.git
-      path: packages/battery_plus/battery_plus_windows
-      ref: windows_crashtest
+  battery_plus_windows: any
 
 dev_dependencies:
   flutter_test:
