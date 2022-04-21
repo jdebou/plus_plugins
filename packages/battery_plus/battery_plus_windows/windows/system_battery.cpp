@@ -118,7 +118,7 @@ bool SystemBattery::StopListen() {
   if (!_notifier) {
     return false;
   }
-  bool unregistered = UnregisterPowerSettingNotification(notifier) != 0;
+  bool unregistered = UnregisterPowerSettingNotification(_notifier) != 0;
   if (!unregistered) {
     return false;
   }

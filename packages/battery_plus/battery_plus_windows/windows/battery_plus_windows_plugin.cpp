@@ -129,6 +129,9 @@ BatteryStatusStreamHandler::OnCancelInternal(
   _registrar->UnregisterTopLevelWindowProcDelegate(_delegate);
   if (!_battery.StopListen()) {
     return std::make_unique<FlStreamHandlerError>(
+        "error", "blah",        nullptr);
+
+    return std::make_unique<FlStreamHandlerError>(
         std::to_string(_battery.GetError()), _battery.GetErrorString(),
         nullptr);
   }
