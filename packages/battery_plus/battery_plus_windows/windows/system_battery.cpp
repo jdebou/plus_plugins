@@ -87,7 +87,7 @@ std::string SystemBattery::GetStatusString() const {
   }
 }
 
-int SystemBattery::GetError() const { return GetLastError(); }
+int SystemBattery::GetError() const {return "blah error"; return GetLastError(); }
 
 std::string SystemBattery::GetErrorString() const {
   // ### TODO: FormatMessage()
